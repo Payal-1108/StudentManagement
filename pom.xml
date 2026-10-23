@@ -1,28 +1,59 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>MVCApplication</groupId>
-	<artifactId>MVCApplication</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<dependencies>
+<?xml version="1.0" encoding="UTF-8"?>
 
-     <!-- Spring JDBC -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.techhub</groupId>
+    <artifactId>StudentManagement</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+
+    <properties>
+
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    </properties>
+
+
+    <dependencies>
+
+        <!-- Spring MVC -->
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>6.2.11</version>
+        </dependency>
+
+
+        <!-- Spring JDBC -->
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>6.2.11</version>
         </dependency>
 
-        <!-- MySQL -->
+
+        <!-- Bootstrap -->
+
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>9.4.0</version>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>5.3.8</version>
         </dependency>
 
-        <!-- Servlet -->
+
+        <!-- Jakarta Servlet -->
+
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -30,12 +61,27 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JSTL -->
+
+        <!-- JSP API -->
+
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <version>3.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+        <!-- JSTL API -->
+
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>3.0.2</version>
         </dependency>
+
+
+        <!-- JSTL Implementation -->
 
         <dependency>
             <groupId>org.glassfish.web</groupId>
@@ -43,34 +89,55 @@
             <version>3.0.1</version>
         </dependency>
 
-</dependencies>
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/webapp</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-		</resources>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.13.0</version>
-				<configuration>
-					<release>25</release>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.2.3</version>
-			</plugin>
-		</plugins>
-	</build>
+
+        <!-- MySQL -->
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.4.0</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+
+        <finalName>StudentManagement</finalName>
+
+        <plugins>
+
+            <!-- Java Compiler -->
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+
+            </plugin>
+
+
+            <!-- WAR Plugin -->
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+
+                <configuration>
+
+                    <failOnMissingWebXml>
+                        false
+                    </failOnMissingWebXml>
+
+                </configuration>
+
+            </plugin>
+
+        </plugins>
+
+    </build>
+
 </project>

@@ -8,8 +8,25 @@ public class Student {
     private String email;
     private int deptId;
     private int currentSemester;
+    private String password;
+    private String departmentName;
 
     public Student() {
+    }
+
+    public Student(int id, String rollNumber, String name,
+                   String email, int deptId,
+                   int currentSemester, String password,
+                   String departmentName) {
+
+        this.id = id;
+        this.rollNumber = rollNumber;
+        this.name = name;
+        this.email = email;
+        this.deptId = deptId;
+        this.currentSemester = currentSemester;
+        this.password = password;
+        this.departmentName = departmentName;
     }
 
     public int getId() {
@@ -58,5 +75,21 @@ public class Student {
 
     public void setCurrentSemester(int currentSemester) {
         this.currentSemester = currentSemester;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 }
